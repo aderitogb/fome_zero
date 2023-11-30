@@ -106,8 +106,9 @@ st.markdown('---')
 # =======================================================
 #  MAPA
 # =======================================================
-f = folium.Figure(width=1920, height=1080)
-m = folium.Map(max_bounds=True, zoom_start=13).add_to(f)
+# f = folium.Figure(width=1920, height=1080)
+# m = folium.Map(max_bounds=True, zoom_start=13).add_to(f)
+m = folium.Map(zoom_start=13)
 marker_cluster = MarkerCluster().add_to(m)
 
 for _, line in df_filter.iterrows():
@@ -135,4 +136,4 @@ for _, line in df_filter.iterrows():
         icon=folium.Icon(color=color, icon="utensils", prefix="fa"),
     ).add_to(marker_cluster)
 
-folium_static(m, width=1024, height=768)
+folium_static(m, width=880, height=360)
